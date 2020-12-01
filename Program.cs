@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace _06.OopConstructors
+namespace _06.OopConstructors  // and static Methods, instance methods waht they are ! 
 {
 
     class Singleton   //Design  Pattern example --helps the private constructor to be used in thoher class;
@@ -87,18 +87,18 @@ namespace _06.OopConstructors
         {
             this.Id = GetNextId();
             this.Name = name;
-            this.Age = age;  
+            this.Age = age;
             Console.WriteLine(this.Name);
         }
 
         private static int lastPersonId = -1;
-        private static int GetNextId() 
+        private static int GetNextId()
         {
             return ++lastPersonId;
         }
 
         public int Id { get; set; }
-        
+
 
         public int Useless
         {
@@ -158,9 +158,9 @@ namespace _06.OopConstructors
         }
 
     }
-    class MathExtensions 
+    class MathExtensions
     {
-        public static int Product( params int[] numbers) 
+        public static int Product(params int[] numbers)
         {
             int product = 1;
             foreach (int number in numbers)
@@ -169,7 +169,7 @@ namespace _06.OopConstructors
             }
             return product;
         }
-        
+
     }
 
     class Program  // we use classes to create an instance of the class call Object and to give him functionallity //
@@ -189,6 +189,12 @@ namespace _06.OopConstructors
             var people = Enumerable.Range(1, 15)  // to generate 15 People ! using Lingq
                 .Select(X => ("Person #" + X, X % Person.MaxAge)).ToArray();
         }
+        // instance method, can be called when first an object of a class is created //we need first object here to be created tehn we can call them
+        // static method can be called without instatnce of class -i e  object be created //We need no object here to call eht method 
+        //static -means, common, can not be instantiated ! 
+        //we can not creat an object of an static class ! can not access static members using an object.
+        //keyword static   , static is a type of modifier
+        //static methods can only call other static methods and access other static members ! 
     }
 }
 
